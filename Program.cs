@@ -10,3 +10,18 @@
     }
     f.Close();
 }
+
+string[] CreateShortArray(string[] lines)
+{
+    int j = 0;
+    string[] lineChort = new string[lines.Length];
+    for (int i = 0; i < lines.Length; i++)
+    {
+        if (lines[i].Length <= 3)
+        {
+            lineChort[j] = lines[i];
+            j++;
+        }
+    }
+    return lineChort;
+}
