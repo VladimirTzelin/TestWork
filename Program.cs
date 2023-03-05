@@ -25,3 +25,21 @@ string[] CreateShortArray(string[] lines)
     }
     return lineChort;
 }
+
+void PrintArray(string msg, string[] array)
+{
+    Console.Write($" {msg} \t[ ");
+    for (int k = 0; k < array.Length && array[k] != ""; k++)
+    {
+        Console.Write(" " + array[k]);
+    }
+    Console.Write(" ]\n"); 
+}
+
+CreateArraytxt();
+string[] lines = File.ReadAllLines("text.txt");
+File.Delete("text.txt");
+
+PrintArray("Массив исходных значений: ", lines);
+PrintArray("Массив искомых значений: ", CreateShortArray(lines));
+
